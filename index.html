@@ -1,12 +1,51 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title> Sagiv Shiber </title>
-  </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Landing Page</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        body { background-color: #f9fafb; color: #111827; line-height: 1.5; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; }
+        .logo { font-size: 24px; font-weight: 700; color: #4f46e5; text-decoration: none; }
+        
+        /* Hero Section */
+        .hero { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 100px 0; }
+        h1 { font-size: 48px; font-weight: 800; letter-spacing: -1px; margin-bottom: 20px; max-width: 800px; line-height: 1.2; }
+        h1 span { color: #4f46e5; }
+        p { font-size: 20px; color: #4b5563; margin-bottom: 40px; max-width: 600px; }
+        
+        /* Form */
+        form { display: flex; gap: 12px; width: 100%; max-width: 480px; }
+        input[type="email"] { flex: 1; padding: 14px 16px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 16px; outline: none; }
+        input[type="email"]:focus { border-color: #4f46e5; box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1); }
+        button { background-color: #4f46e5; color: white; border: none; padding: 14px 24px; border-radius: 8px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+        button:hover { background-color: #4338ca; }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 36px; }
+            form { flex-direction: column; }
+            button { width: 100%; }
+        }
+    </style>
+</head>
 <body>
-  <center>
-    <h1> Welcome! </h1>
-    <p> My personal wensite v1 </p>
-  </center>
+    <div class="container">
+        <header>
+            <a href="#" class="logo">BrandName</a>
+        </header>
+        <main class="hero">
+            <h1>The smarter way to manage your <span>daily workflow</span></h1>
+            <p>Stop wasting hours on repetitive, manual tasks. Automate your pipeline and get back to doing the work that actually moves the needle.</p>
+            <form action="#" method="POST">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Join the Waitlist</button>
+            </form>
+        </main>
+    </div>
 </body>
 </html>
