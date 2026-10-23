@@ -1,3 +1,77 @@
+/* Footer Banner Styles */
+.footer-banner {
+    background-color: #0f172a; /* Deep dark slate background */
+    color: #94a3b8; /* Light gray text color */
+    padding: 40px 24px;
+    border-top: 1px solid #1e293b;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-text {
+    font-size: 14px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Individual Social Button Links */
+.footer-link {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/* Custom platform colors */
+.email-btn {
+    background-color: #1e293b;
+    color: #f8fafc;
+    border: 1px solid #334155;
+}
+.email-btn:hover {
+    background-color: #334155;
+}
+
+.linkedin-btn {
+    background-color: #0077b5; /* Official LinkedIn Blue */
+    color: white;
+}
+.linkedin-btn:hover {
+    background-color: #005582;
+}
+
+.github-btn {
+    background-color: #24292e; /* Official GitHub Dark */
+    color: white;
+    border: 1px solid #444d56;
+}
+.github-btn:hover {
+    background-color: #1a1e22;
+}
+
+/* Responsive alignment for larger displays */
+@media (min-width: 640px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
 /* Base Setup & Smooth Scrolling */
 * { 
     box-sizing: border-box; 
