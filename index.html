@@ -208,7 +208,7 @@
         
         <!-- Live Action Link out to full profile -->
         <!-- REPLACE THE URL BELOW WITH YOUR ACTUAL SCIX AUTHOR SEARCH QUERY RESULT -->
-        <a href="https://scixplorer.org" target="_blank" rel="noopener noreferrer" class="scix-profile-btn">
+        <a href="https://scixplorer.org/search?p=1&q=Shiber&sort=score+desc&sort=date+desc&d=astrophysics" target="_blank" rel="noopener noreferrer" class="scix-profile-btn">
             View Deep Analytics on SciX Explorer
         </a>
     </div>
@@ -247,8 +247,61 @@
             </div>
         </div>
     </footer>
-
-        
     </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // 1. Enter your canonical name syntax or ORCID ID as registered on SciX/ADS
+    const authorQuery = 'author:"YourLastName, FirstName"'; 
+    
+    // 2. Target public API payload wrapper
+    const apiUrl = `https://harvard.edu{encodeURIComponent(authorQuery)}&fl=citation_count&rows=2000`;
+    
+    // Fallback Mock values if accessing locally without an active token environment
+    // Remove or replace these values when parsing server scripts directly
+    setTimeout(() => {
+        document.getElementById('pub-count').innerText = "14";  // Example value
+        document.getElementById('cite-count').innerText = "342"; // Example value
+        document.getElementById('h-index').innerText = "9";     // Example value
+    }, 800);
+
+    /* UNCOMMENT THIS CODE LOGIC BLOCK WHEN READY TO DEPLOY WITH YOUR API DEVELOPER TOKEN
+    fetch(apiUrl, {
+        method: 'GET',
+        headers: {
+            'Authorization': 'Bearer YOUR_SCIX_DEVELOPER_TOKEN_HERE',
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        const docs = data.response.docs;
+        const totalPubs = data.response.numFound;
+        
+        let totalCitations = 0;
+        let citationsArray = [];
+        
+        docs.forEach(doc => {
+            let count = doc.citation_count || 0;
+            totalCitations += count;
+            citationsArray.push(count);
+        });
+        
+        // Sort descending to find h-index metric
+        citationsArray.sort((a, b) => b - a);
+        let hIndex = 0;
+        while (hIndex < citationsArray.length && citationsArray[hIndex] >= hIndex + 1) {
+            hIndex++;
+        }
+        
+        // Inject results straight to the user layout interface
+        document.getElementById('pub-count').innerText = totalPubs;
+        document.getElementById('cite-count').innerText = totalCitations;
+        document.getElementById('h-index').innerText = hIndex;
+    })
+    .catch(error => console.error('Error fetching SciX data metrics:', error));
+    */
+});
+</script>
 </body>
 </html>
