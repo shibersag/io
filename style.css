@@ -298,3 +298,60 @@ p {
     }
 }
 
+/* SciX Metrics Styling */
+#scix-metrics {
+    background-color: #f1f5f9;
+    padding: 80px 24px;
+}
+
+.metrics-grid {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin: 40px auto;
+    max-width: 900px;
+    flex-wrap: wrap;
+}
+
+.metric-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px 40px;
+    min-width: 200px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.metric-val {
+    font-size: 40px;
+    font-weight: 800;
+    color: #2563eb; /* SciX Accent Theme Blue */
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.metric-lbl {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.scix-profile-btn {
+    display: inline-block;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.2s;
+    margin-top: 20px;
+}
+
+.scix-profile-btn:hover {
+    background-color: #1d4ed8;
+}
+
