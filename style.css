@@ -33,6 +33,89 @@
     display: flex;
     justify-content: center;
 }
+/* Two-Column Hero Base Layout */
+#home {
+    background: linear-gradient(to bottom, #eff6ff, #f8fafc);
+    padding: 160px 24px 80px 24px; /* Generous padding to clear the sticky top nav */
+    min-height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-two-column {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Gives the text slightly more horizontal space than the image */
+    gap: 48px;
+    align-items: center;
+    text-align: left; /* Left aligns all text layout content */
+}
+
+/* Typography Overrides for Left-Aligned Grid */
+.hero-text-content h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #0f172a;
+    line-height: 1.2;
+}
+
+.hero-text-content p {
+    font-size: 18px;
+    color: #64748b;
+    margin-bottom: 0; /* Clear bottom spacing inside the column framework */
+}
+
+/* Image Positioning Framework */
+.hero-image-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-avatar-large {
+    width: 100%;
+    max-width: 300px; /* Caps image scale width nicely on massive layouts */
+    aspect-ratio: 1 / 1; /* Locks file into a perfect square aspect frame */
+    border-radius: 24px; /* Modern square with smooth rounded corners (change to 50% if you prefer a circle) */
+    object-fit: cover; /* Prevents human facial stretching inside dynamic windows */
+    border: 6px solid #ffffff;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profile-avatar-large:hover {
+    transform: translateY(-8px) scale(1.02); /* Clean lift-and-pop microanimation effect on cursor hover */
+}
+
+/* Mobile Responsiveness Engine */
+@media (max-width: 768px) {
+    #home {
+        padding-top: 140px; /* Snug spacing adjustment on smaller devices */
+    }
+    
+    .hero-two-column {
+        grid-template-columns: 1fr; /* Drops down to a standard single vertical stack framework */
+        gap: 32px;
+        text-align: center; /* Shifts content alignment text rules back to center focus for phone screens */
+    }
+    
+    /* Reorders visual execution so your photo stacks over your text headline on mobile displays */
+    .hero-image-content {
+        order: -1; 
+    }
+    
+    .hero-text-content h1 {
+        font-size: 36px;
+    }
+    
+    .profile-avatar-large {
+        max-width: 220px; /* Scales picture box size down comfortably to save screen real estate */
+    }
+}
 
 .profile-avatar {
     width: 70px;       /* Controls the width of your profile picture */
