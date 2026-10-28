@@ -378,3 +378,30 @@ p {
     background-color: #1d4ed8;
 }
 
+/* Sketchfab 3D Embed Section */
+#model-showcase {
+    background-color: #ffffff;
+}
+
+.sketchfab-container {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    padding-bottom: 56.25%; /* Perfect 16:9 aspect scale */
+    height: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    margin: 0 auto;
+}
+
+.sketchfab-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
