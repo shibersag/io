@@ -27,6 +27,29 @@
     justify-content: center;
 }
 
+/* Profile Image Avatar Styling */
+.profile-image-container {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-avatar {
+    width: 150px;       /* Controls the width of your profile picture */
+    height: 150px;      /* Controls the height of your profile picture */
+    border-radius: 50%; /* Makes the image frame perfectly circular */
+    object-fit: cover;  /* Ensures the photo doesn't look stretched or squished */
+    border: 4px solid #ffffff; /* Adds a clean white border frame */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Adds a soft drop-shadow depth effect */
+    transition: transform 0.3s ease;
+}
+
+/* Adds a subtle interactive pop animation when a visitor hovers their mouse over your photo */
+.profile-avatar:hover {
+    transform: scale(1.05);
+}
+
+
 /* Individual Social Button Links */
 .footer-link {
     display: inline-block;
